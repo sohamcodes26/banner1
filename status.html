@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1b103b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), rgba(255, 193, 7, 0.8));
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden; /* To keep pseudo-elements contained */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #300f16; /* Red color for emphasis */
+            animation: pulse 1.5s infinite; /* Add pulsing effect */
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Decorative elements */
+        .decorative-element {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 0;
+            filter: blur(15px);
+        }
+
+        /* Button Style */
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #95143f;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1; /* Bring button above the decorative layer */
+        }
+
+        .back-button:hover {
+            background-color: #f50057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decorative-element"></div> <!-- Decorative blur background -->
+        <h1>Status</h1>
+        <p class="message">Uh-oh! No services acquired yet.</p>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>
